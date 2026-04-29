@@ -498,6 +498,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50322655106f4d14cac6fb59fafb9093, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1630785348}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50322655106f4d14cac6fb59fafb9093, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1630785352}
   m_SourcePrefab: {fileID: 100100000, guid: 50322655106f4d14cac6fb59fafb9093, type: 3}
 --- !u!1 &1630785347 stripped
 GameObject:
@@ -552,8 +555,71 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &1630785352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630785347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efb9f4a54205234abcdbebf7b244134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  movementInput:
+    m_Name: Movement Input
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 93c38306-f414-4ebf-874c-abdc03e04a3b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: fa4b81fe-baee-47a1-b6ec-5c48d7a7afae
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 856908bc-12a9-44d0-9788-feab597d36c9
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 6b0b974b-c1b2-4030-b770-7c008a946a80
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: b1b21d04-3157-4aaa-95e9-a5fd56a7a022
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: d66518b8-f455-4bb1-9475-e04b1a0132b7
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement Input
+      m_Flags: 8
+    m_Flags: 0
+  movementSpeed: 1.5
+  rotationSpeed: 540
 --- !u!1 &2141564828
 GameObject:
   m_ObjectHideFlags: 0
