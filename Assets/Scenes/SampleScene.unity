@@ -206,8 +206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.033548925, y: 0.94104636, z: -0.098042056, w: -0.3220156}
-  m_LocalPosition: {x: 3.0771418, y: 2.2465544, z: 4.3874683}
+  m_LocalRotation: {x: 0.25340125, y: 0.0000000032696907, z: -8.564988e-10, w: 0.9673613}
+  m_LocalPosition: {x: 0, y: 2.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1630785354}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -649,8 +649,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789131542}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.033548925, y: 0.94104636, z: -0.098042056, w: -0.3220156}
-  m_LocalPosition: {x: 3.0771418, y: 2.2465544, z: 4.3874683}
+  m_LocalRotation: {x: 0.25340125, y: 0.000000003269691, z: -8.5649887e-10, w: 0.9673613}
+  m_LocalPosition: {x: 0, y: 2.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -893,6 +893,11 @@ MonoBehaviour:
     m_Flags: 0
   movementSpeed: 1.5
   rotationSpeed: 540
+--- !u!4 &1630785354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 50322655106f4d14cac6fb59fafb9093, type: 3}
+  m_PrefabInstance: {fileID: 1630785346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2141564828
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +911,7 @@ GameObject:
   - component: {fileID: 2141564830}
   - component: {fileID: 2141564829}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,8 +1016,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 789131548}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 2141564832}
   - {fileID: 1630785346}
-  - {fileID: 789131548}
