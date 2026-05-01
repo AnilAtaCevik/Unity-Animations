@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
         sprintInput.Enable();
     }
 
+    void OnDisable()
+    {
+        movementInput.Disable();
+        sprintInput.Disable();
+    }
+
     void Update()
     {
         Movement();
@@ -34,21 +40,24 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         Vector2 inputVector = movementInput.ReadValue<Vector2>();
-        Vector2 animVector = inputVector;
-
+        
         bool isSprinting = sprintInput.IsPressed() && inputVector.y > 0;
 
         if (isSprinting)
         {
             inputVector.x = 0;
-            animVector.y = 2f;
         }
-        else if (animVector.magnitude > 0)
+
+        Vector2 animVector = inputVector;
+        
+        if (!isSprinting && animVector.magnitude > 0) 
         {
             float maxVal = Mathf.Max(Mathf.Abs(animVector.x), Mathf.Abs(animVector.y));
             animVector /= maxVal; 
         }
 
+        animator.SetBool("isSprinting", isSprinting);
+        
         animator.SetFloat("MoveX", animVector.x, 0.1f, Time.deltaTime);
         animator.SetFloat("MoveY", animVector.y, 0.1f, Time.deltaTime);
 
