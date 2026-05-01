@@ -1070,6 +1070,23 @@ MonoBehaviour:
       m_Action: Movement Input
       m_Flags: 8
     m_Flags: 0
+  sprintInput:
+    m_Name: Sprint Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8601ed20-f40e-4cc6-ad95-09d3091d0f36
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 0a73f72a-2cd2-418e-a307-2461e843c056
+      m_Path: <Keyboard>/leftShift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Sprint Input
+      m_Flags: 0
+    m_Flags: 0
   movementSpeed: 3
   rotationSpeed: 540
 --- !u!4 &1630785354 stripped

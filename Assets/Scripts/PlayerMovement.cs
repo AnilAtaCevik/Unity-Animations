@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform cameraMain;
     
     [SerializeField] InputAction movementInput;
+    [SerializeField] InputAction sprintInput;
 
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float rotationSpeed = 15f;
