@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] InputAction sprintInput;
 
     [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float sprintSpeed = 7f;
     [SerializeField] float rotationSpeed = 15f;
 
     void Start()
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void OnEnable()
     {
         movementInput.Enable();
+        sprintInput.Enable();
     }
 
     void Update()
@@ -32,9 +34,16 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         Vector2 inputVector = movementInput.ReadValue<Vector2>();
-        
         Vector2 animVector = inputVector;
-        if (animVector.magnitude > 0)
+
+        bool isSprinting = sprintInput.IsPressed() && inputVector.y > 0;
+
+        if (isSprinting)
+        {
+            inputVector.x = 0;
+            animVector.y = 2f;
+        }
+        else if (animVector.magnitude > 0)
         {
             float maxVal = Mathf.Max(Mathf.Abs(animVector.x), Mathf.Abs(animVector.y));
             animVector /= maxVal; 
@@ -55,8 +64,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputVector != Vector2.zero)
         {
-            Vector3 moveDirection = (transform.forward * inputVector.y + transform.right * inputVector.x).normalized;
-            transform.position += moveDirection * movementSpeed * Time.deltaTime;
+            float currentSpeed = isSprinting ? sprintSpeed : movementSpeed;
+
+            Vector3 cameraRight = cameraMain.right;
+            cameraRight.y = 0;
+            cameraRight.Normalize();
+
+            Vector3 moveDirection = (cameraForward * inputVector.y + cameraRight * inputVector.x).normalized;
+            transform.position += moveDirection * currentSpeed * Time.deltaTime;
         }
     }
 }
